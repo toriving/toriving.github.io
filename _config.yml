@@ -83,6 +83,9 @@ projects: false
 about: false
 blog: false
 
+# if you don't need "CV", comment them out below
+cv : True
+
 # do you want to show the "read time" of the posts?
 read-time: true
 
