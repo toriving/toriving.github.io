@@ -1,7 +1,8 @@
 # main text of home
 name: Dongju Park
-bio: Natural Language Processing and Machine Learning
-
+bio: Natural Language Processing
+bio2: and
+bio3: Machine Learning
 # twitter summary info
 description: A blog about technology and stuff related
 
