@@ -1,6 +1,6 @@
 # main text of home
 name: Dongju Park
-bio: Interested in Machine Learning and Natural Language Processing
+bio: Natural Language Processing and Machine Learning
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -34,15 +34,15 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: https://fb.com/toriving
+facebook: toriving
 #twitter: mytwitter
 # google: mygoogle
-instagram: https://instagram.com/dongjuu_
+instagram: dongjuu_
 # pinterest: mypinterest
 # linkedin: mylinkedin
 # youtube: myyoutube
 # spotify: myspotify
-github: https://github.com/toriving
+github: toriving
 # gitlab: mygitlab
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
@@ -70,7 +70,7 @@ authors:
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
 # normal = 560px / large = 810px
-width: normal
+width: large
 
 # if you don't need pagination, comment the *paginate* configs below
 # paginate: 5
