@@ -1,0 +1,43 @@
+{% if page.title == "Home"
+   or page.title == "Blog"
+   or page.title == "Projects"
+   or page.title == "Tags"
+%}{% assign showHeader = true %}{% endif %}
+
+{% if page.title == "Blog" %}
+    {% assign isBlog = true %}
+{% else if page.title == "Tags %}
+        {% assign isTags = true %}
+{% endif %}
+
+
+{% if isBlog == true %}
+<header class="header-home {% if site.animation %}animated{% endif %}">
+
+    <span class="link">
+        <img src="{{site.url}}/assets/images/post.png" />
+    </span>
+
+
+    <h2 class="description-black"> 공부하면서 정리하는 포스트
+
+    <a class="link" href="{{site.notion}}">
+        <img src="{{site.url}}/assets/images/notion.jpeg" />
+    </a>
+    </h2>
+
+</header>
+
+{% else if isTags == true %}
+    <header class="header-home {% if site.animation %}animated{% endif %}">
+
+        <span class="link">
+            <img src="{{site.url}}/assets/images/tag.png" />
+        </span>
+
+
+    </header>
+
+{% endif %}
+
+{% include nav.html %}
