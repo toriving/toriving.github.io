@@ -26,7 +26,7 @@ notion: https://www.notion.so/Paper-Review-5271580c923f47b6a14cd20535b294c3
 permalink: /:title/
 
 # To enable google analytics, supply your token below
-# analytics-google: 'UA-MYANALYTICS'
+analytics-google: 'UA-165270896-1'
 
 # To enable piwik tracking, supply your url & site ID below
 # analytics-piwik-url: 'piwik.my-host.com'
@@ -131,10 +131,3 @@ excerpt_separator: "\n\n"
 incremental: false
 
 post-assets: assets/review
-
-# Analytics
-analytics:
-  provider               : "google-gtag" # 구글 어날리틱스 등록 false (default), "google", "google-universal", "custom"
-  google:
-    tracking_id          : "UA-165270896-1"
-    anonymize_ip         : # true, false (default)
