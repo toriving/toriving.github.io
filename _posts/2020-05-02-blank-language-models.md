@@ -12,6 +12,8 @@ category: blog
 author: dongju 
 description: Dynamically creating and filling in blanks task에 적합한 Blank Language Model 소개
 usemath: true
+toc: true
+toc_label: "Contents"
 ---
 
 **Authors** : Tianxiao Shen, Victor Quach, Regina Barzilay, Tommi Jaakkola
@@ -90,7 +92,7 @@ $$\text{BLM(c)} = p(b,w,l,r|c;\theta)$$
 
 ? 은 옵션임을 나타냄. 즉, “w”, “\_\_w”, “w\_\_”, or “\_\_w\_\_”.  4가지 중 1개.
 
-### **Model Architecture**
+### 3.1 Model Architecture
 
 - canvas의 ($$c_1$$, ... $$c_n$$) 을 sequence of representations ($$z_1$$, ... , $$z_n$$) 을 transformer encoder를 통해 구하고, Blank가 있는 곳은 z = {$$z_{b_1}$$, ..., $$z_{b_k}$$} 를 얻음.
 - 3가지 파트로 joint distribution을 factorize함. (see Fig.3 for an overview)
@@ -119,7 +121,7 @@ $$\text{BLM(c)} = p(b,w,l,r|c;\theta)$$
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/blanklanguagemodels/Untitled%203.png"></p>
 
 
-### **Likelihood**
+### 3.2 Likelihood
 
 > The same final text "*x"* may be realized by multiple trajectories. **However, if we specify the order in which the words in *"x"* are generated, the trajectory is also
 uniquely determined.** This follows from the fact that BLM never results in a canvas with two (or more) consecutive blanks.
@@ -132,7 +134,7 @@ $$p(x;\theta)=\sum\limits_{\sigma\in{S_n}}p(x,\sigma;\theta)=\sum\limits_{\sigma
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/blanklanguagemodels/Untitled%204.png"></p>
 
 
-### Training
+### 3.3 Training
 
 **? : Here we propose training objectives derived from log likelihood. 
 Directly computing the marginal likelihood over n! orders is intractable.

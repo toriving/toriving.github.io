@@ -103,7 +103,7 @@ show-author: true
 
 # do you want some animations?
 animation: true
-
+toc_levels: 1..6
 plugins:
     - jekyll-seo-tag
     - jekyll-gist

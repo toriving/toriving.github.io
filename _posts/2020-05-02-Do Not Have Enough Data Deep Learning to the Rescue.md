@@ -12,6 +12,7 @@ category: blog
 author: dongju 
 description: GPT-2 를 이용하여 데이터셋을 생성 한 후, 원래 데이터로 학습 된 classifier를 통해 생성된 데이터를 필터링 하여 남은 것들을 원래 데이터에 추가하는 방식으로 Data Augmentation.
 usemath: true
+toc: true
 ---
 
 
@@ -93,7 +94,7 @@ LAMBADA는 2개의 key ingredients를 갖음
 - Language model *G* : GPT-2
 - Number to synthesize per class *$$N_1$$, ... , $$N_q$$*
 
-### **LAMBADA Algorithm**
+### 4.1 LAMBADA Algorithm
 
 - Step 1: Train baseline classifier
     - *$$D_{train}$$*을 이용하여 *Baseline classifier h = A($$D_{train}$$)*을 학습함.
@@ -132,7 +133,7 @@ LAMBADA는 2개의 key ingredients를 갖음
 
 또한 LAMBADA를 다른 data augmentation 기법 (CVAE, EDA, CBERT)와 비교함  
 
-### Datasets
+### 5.1 Datasets
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/Do%20Not%20Have%20Enough%20Data%20Deep%20Learning%20to%20the%20Rescu/Untitled%205.png"></p>
 
@@ -143,7 +144,7 @@ LAMBADA는 2개의 key ingredients를 갖음
 Dataset을 train, validation, test sets (80%, 10%, 10%) 으로 랜덤하게 나누어 사용  
 Training set에서 각 클래스 별 5, 10, 20, 50, 100 개의 sample을 랜덤하게 추출하여 subset을 만들어 사용  
 
-### Classifiers
+### 5.2 Classifiers
 
 자세한 내용은 논문 참조
 
@@ -151,7 +152,7 @@ Training set에서 각 클래스 별 5, 10, 20, 50, 100 개의 sample을 랜덤�
 - LSTM : We implemented a sequence-to-vector model based on an LSTM component followed by two fully connected layers and a softmax layer. For word embedding, we employed GLoVe of 100 dimensions.
 - BERT : Wiki & BooksCorpus (800 M words) 를 사용하여 Masked Language Model, next-sentence prediction task로 pre-trained 된 모델 사용
 
-### Generative Models
+### 5.3 Generative Models
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/Do%20Not%20Have%20Enough%20Data%20Deep%20Learning%20to%20the%20Rescu/Untitled%206.png"></p>
 
@@ -161,7 +162,7 @@ Fair comparison을 위해 class label을 이용하여 문장을 생성할 수 �
 - CVAE : Conditional Variational Autoencoder - standard CVAE model with RNN-based encoder and decoder 를 사용
 - CBERT : Conditional Bidirectional Encoder Representations from Transformers - pre-trained BERT 에 fine-tune을 하고 label condition을 주어 labeled sentence를 생성하는 방식
 
-### Results
+### 5.4 Results
 
 **Number of Samples and Classifiers**
 
