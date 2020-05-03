@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: http://toriving.github.io/sitemap.xml
