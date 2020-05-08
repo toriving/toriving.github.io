@@ -43,19 +43,19 @@ Based on recent advances in natural language modeling and those in text generati
 
 ## 1. Introduction
 
-- Data augmentation은 데이터가 부족할때 흔히 사용되는 방법임.
-- 기존에 존재하는 데이터를 바탕으로 새로운 데이터를 만들어서 모델의 성능을 향상시키는 것.
+- Data augmentation은 데이터가 부족할 때 데이터를 늘리기 위해 방법
+- 기존에 존재하는 데이터를 바탕으로 새로운 데이터를 만들어서 모델의 성능을 향상시키는 것
 - Cropping, padding, flipping 등 과 같은 다양한 transformation으로 쉽게 augmentation을 할 수 있는 이미지나 Speech recogition 도메인과 달리 텍스트 이러한 방법을 적용하기 어려움
-- 그렇기 때문에 동의어로 교체한다거나, 단어를 지우거나 바꾸는 방법들이 사용되었음.
+- 그렇기 때문에 특정 단어를 동의어로 교체 또는 삭제, 그리고 임의로 바꾸는 방법들이 사용됨
 - 본 논문에서는 text classification task를 위한 ***language-model-based data augmentation (LAMBADA)*** 를 소개함.
 - Pre-trained GPT-2를 이용하여 specific task dataset에 대하여 fine-tuning을 한 후 새로운 labeled sentence를 생성 함.
+- 여기서 GPT-2는 충분히 좋은 퀄리티의 텍스트를 생성한다고 가정을 바탕으로 함
 - 이와 별개로 기존 dataset을 바탕으로 classifier를 training 하여 생성된 데이터셋을 이 classifier를 통하여 필터링 함.
-- 이렇게 필터링 된 data들은 퀄리티가 보장되므로 학습데이터로 사용함.
+- 이렇게 필터링 된 data들은 퀄리티가 보장된다고 가정하며, 새로운 학습 데이터로 사용함.
 - 본 논문의 contribution은 다음과 같음
-    - Classifier의 성능 향상
+    - Data augmentation을 통한 Classifier의 성능 향상
     - Data가 적은 상황에서 다른 Data augmentation 기법의 성능을 뛰어넘음
     - Unlabeled data가 존재하지 않는 상황에서 semi-supervised techniques을 대체할 수 있음
-
 ## 2. Related Work
 
 - 지금까지 대부분의 textual data augmentation 기법들은 주어진 데이터의 일부(local)를 바꾸는 기법을 사용함 (단어 / 단어들을 동의어로 치환하는 방법).
