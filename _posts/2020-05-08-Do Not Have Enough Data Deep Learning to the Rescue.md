@@ -1,7 +1,7 @@
 ---
 title: "Do Not Have Enough Data? Deep Learning to the Rescue!"
 layout: post
-date: 2020-05-02 12:00
+date: 2020-05-08 19:32
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -111,7 +111,7 @@ LAMBADA는 2개의 key ingredients를 갖음
     - *G_tuned*를 이용하여 new labeled sentences를 생성함.
     - 처음 Condition으로 "*y SEP*"을 입력하고 *EOS* 가 나올때 까지 토큰 생성
     - 이렇게 생성된 모든 데이터들의 집합을 *D*\*로 표기
-    - Step 4에서 필터링이 되므로, 생성하고 싶은 수의 10배를 생성함
+    - Step 4에서 필터링 되므로, 레이블 별 생성하고 싶은 수의 10배를 생성함
     - 총 생성되는 데이터의 수는 :
 
         <p align="center"><img src="{{site.url}}/{{site.post-assets}}/Do%20Not%20Have%20Enough%20Data%20Deep%20Learning%20to%20the%20Rescu/Untitled%203.png"></p>
@@ -124,8 +124,6 @@ LAMBADA는 2개의 key ingredients를 갖음
     - 이러한 방식은 semi-supervised learning 에서 가져왔다고 함
     - 또한 제안한 방식은 double voting mechanism이 적용된다고 함
     - (생성할때 condition으로 label 정보를 주고, Filter를 통해서 label confidence로 filtering 하므로 double voting mechanism 이라고 하는 것 같음)
-
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/Do%20Not%20Have%20Enough%20Data%20Deep%20Learning%20to%20the%20Rescu/Untitled%204.png"></p>
 
 ## 5. Experimental Results
 
@@ -217,4 +215,4 @@ Unlab. GPT 는 마찬가지로 weak labeling approach를 해서 labeling을 하�
 
 ## 6. Discussion and Future Work
 
->We introduce LAMBADA for improving classifiers’ performance. It involves fine-tuning a language model, generat-ing new labeled-condition sentences and a filtering phase. We showed that our method statically improves classifiers’ performance on small data sets. In addition, we showed that LAMBADA beats the state-of-the-art techniques in data augmentation.
+>We introduce LAMBADA for improving classifiers’ performance. It involves fine-tuning a language model, generating new labeled-condition sentences and a filtering phase. We showed that our method statically improves classifiers’ performance on small data sets. In addition, we showed that LAMBADA beats the state-of-the-art techniques in data augmentation.
