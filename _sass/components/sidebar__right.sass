@@ -1,0 +1,20 @@
+.sidebar__right
+    margin-bottom: 1em
+    position: sticky !important /* added to make toc scroll with page */
+    float: right !important /* added to make toc scroll with page */
+    top: 0
+    right: 0
+    width: 300px
+    margin-right: -1 * 100
+    padding-left: 1em
+    padding-top: 6em !important /* added to make toc scroll with page */
+    z-index: 10
+
+    @media #{$mobile}
+        width: 0
+        top: 0
+        margin-right: 0
+        padding-top: 0
+        padding-left: 0
+        z-index: 0
+        visibility: hidden
