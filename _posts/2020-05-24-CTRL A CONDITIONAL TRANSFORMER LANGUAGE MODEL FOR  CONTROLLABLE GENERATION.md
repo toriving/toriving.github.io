@@ -55,36 +55,8 @@ Large-scale language models show promising text generation capabilities, but use
 
 - 기존의  Language Model :
 
-<br\>
 $$p(x) = \prod\limits_{t=i}^np(x_i|x_{<i})$$
-<br\>
-$$p(x) = \prod\limits_{t=i}^np(x_i|x_{<i})$$
-<br\>
 
-- 텍스트 시퀀스 ($$x_1$$, ..., $$x_n$$) 으로 $$P(x)$$ 를 학습
-
-- Next-word prediction : 주어진 dataset *D* = ($$x^1$$, ..., $$x^{\mid D\mid }$$)를 이용, Negative Log-Likelihood 를 최소화 하여 parameters $$\theta$$ 를 학습
-    
-$$L(D) = -\sum_{k=1}^{|D|}logp_\theta(x_i^k|x_{<i}^k)$$
-
-- Language model은 $$p_\theta$$$$(x_i\mid x_{<i})$$를 학습하기 때문에 length *m*을 갖는 새로운 $$\tilde{x}$$ 를 생성 할 수 있음:
-
-$$p_\theta(x_0), p_\theta(x_1|\tilde{x}_0), ... , p_\theta(x_m|\tilde{x}_{<m})$$
-
-## 3. LANGUAGE MODELING WITH CTRL
-
-- CTRL은 항상 control code *c* 를 바탕으로 $$p(x\mid c)$$ 를 학습한다.
-
-$$p(x|c) = \prod_{i=1}^nP(x_i|x_{<i},c)$$
-
-$$L(D) = -\sum_{k=1}^{|D|}logp_\theta(x_i^k|x_{<i}^k,c^k)$$
-
-- Control code *c* 는 생성 과정에서 컨트롤 할 수 있도록 도와준다.
-- CTRL은 Control code가 raw text의 앞에 붙어서 $$p_θ (x_i\mid x<i,c)$$ 가 학습된다.
-
-    ex) [Control Code] [Start] $$x_1$$ $$x_2$$ $$x_3$$ ... $$x_n$$
-
-- 모델 구조는 Transformer Decoder를 쌓은 것과 유사함 (GPT2 와 유사)
 
 <br/>
 
