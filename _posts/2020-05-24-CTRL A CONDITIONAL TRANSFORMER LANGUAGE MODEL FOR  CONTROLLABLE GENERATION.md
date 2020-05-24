@@ -1,16 +1,16 @@
 ---
 title: "CTRL: A CONDITIONAL TRANSFORMER LANGUAGE MODEL FOR CONTROLLABLE GENERATION"
 layout: post
-date: 2020-05-08 19:32
+date: 2020-05-24 12:37
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-- Data augmentation
+- Language Model
 - Generation
 star: true
 category: blog
 author: dongju 
-description: GPT-2 를 이용하여 데이터셋을 생성 한 후, 원래 데이터로 학습 된 classifier를 통해 생성된 데이터를 필터링 하여 남은 것들을 원래 데이터에 추가하는 방식으로 Data Augmentation.
+description: Control Code 를 이용하여 Language model 에 Condition을 주어 도메인, 스타일, 토픽 등과 같이 생성 되는 문장의 내용 및 스타일을 컨트롤 하여 생성 함 
 usemath: true
 toc: true
 ---

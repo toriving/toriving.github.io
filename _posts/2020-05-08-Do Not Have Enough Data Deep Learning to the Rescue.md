@@ -56,6 +56,7 @@ Based on recent advances in natural language modeling and those in text generati
     - Data augmentation을 통한 Classifier의 성능 향상
     - Data가 적은 상황에서 다른 Data augmentation 기법의 성능을 뛰어넘음
     - Unlabeled data가 존재하지 않는 상황에서 semi-supervised techniques을 대체할 수 있음
+    
 ## 2. Related Work
 
 - 지금까지 대부분의 textual data augmentation 기법들은 주어진 데이터의 일부(local)를 바꾸는 기법을 사용함 (단어 / 단어들을 동의어로 치환하는 방법).
