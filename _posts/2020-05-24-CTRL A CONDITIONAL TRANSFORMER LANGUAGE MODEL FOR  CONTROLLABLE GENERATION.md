@@ -55,7 +55,11 @@ Large-scale language models show promising text generation capabilities, but use
 
 - 기존의  Language Model :
 
+<br\>
 $$p(x) = \prod\limits_{t=i}^np(x_i|x_{<i})$$
+<br\>
+$$p(x) = \prod\limits_{t=i}^np(x_i|x_{<i})$$
+<br\>
 
 - 텍스트 시퀀스 ($$x_1$$, ..., $$x_n$$) 으로 $$P(x)$$ 를 학습
 
