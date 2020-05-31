@@ -4,6 +4,10 @@
    or page.title == "Tags"
 %}{% assign showHeader = true %}{% endif %}
 
+<link rel="shortcut icon" href="{{ site.url }}/assets/images/favicon/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/assets/images/favicon/apple-icon-144x144.png" />
+
+
 {% if showHeader == true %}
     <header class="header-home {% if site.animation %}animated{% endif %}">
         {% if site.about %}
