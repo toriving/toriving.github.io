@@ -234,7 +234,7 @@ $$I(c) = \theta \text{  if c is True else 1}$$
 
 - Domain control codes 는 training data를 mutually exclusive sets으로 나눌 수 있음
 - 이는 어떤 training data의 subset이 language model에 의해 생성된 텍스트에 영향을 줬는지 알 수 있음
-- Language model은 $$p_θ (x|c)$$ 를 학습하는 것 이다 (Recall)
+- Language model은 $$p_θ(x|c)$$ 를 학습하는 것 이다 (Recall)
 - Prior p(c)는 domain 에 대한 랭킹을 계산하는 straightforward 한 방법
 
 $$p_\theta(c|x) \propto p_\theta(x|c)p(c)$$
