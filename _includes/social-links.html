@@ -35,6 +35,12 @@
         </a>
     {% endif %}
 
+    {% if site.scholar %}
+        <a class="link" data-title="scholar.google.com/citations?hl=en&user={{ site.scholar }}" href="https://scholar.google.com/citations?hl=en&user={{ site.scholar }}" target="_blank">
+            <svg class="icon icon-scholar"><use xlink:href="#icon-scholar"></use></svg>
+        </a>
+    {% endif %}
+
     {% if site.youtube %}
         <a class="link" data-title="youtube.com/{{ site.youtube }}" href="http://youtube.com/{{ site.youtube }}" target="_blank">
             <svg class="icon icon-youtube"><use xlink:href="#icon-youtube"></use></svg>
