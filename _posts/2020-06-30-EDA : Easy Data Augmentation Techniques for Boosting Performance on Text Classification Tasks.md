@@ -74,7 +74,7 @@ parameters for practical use.
 
 ### **2.4 Random Deletion (RD)**
 
-: 문장 내에서 각각의 단어에 대해 $p$ 확률로 지운다.
+: 문장 내에서 각각의 단어에 대해 $$p$$ 확률로 지운다.
 
 - 긴 문장은 짧은 문장보다 단어가 많기에 원래의 레이블을 유지하면서 더 많은 노이즈를 추가할 수 있다.
 - 따라서 $$n=al$$ 식을 이용하여 $$n$$을 정해준다.
@@ -96,7 +96,6 @@ parameters for practical use.
 - SUBJ : subjectivity/objectivity dataset
 - TREC : question type dataset
 - PC : Pro-Con dataset
-- 
 
 각 데이터 셋의 통계량은 다음과 같다.
 
@@ -161,7 +160,7 @@ Training set : $$N_{train}$$ = {500, 2,000, 5,000, all available data}
 - RI는 $$a$$에 대해서 안정적으로 성능 향상을 얻을 수 있다.
 - RS는 0.2 이하일때 좋으며 0.3 이상부터는 떨어지기 시작한다.
 - RD는 낮은 $$a$$에서 가장 높은 성능향상을 얻지만 $$a$$가 높아질수록 성능 하락도 크다.
-- $a$ = 0.1 이 *sweet spot* 이다.
+- $$a$$ = 0.1 이 *sweet spot* 이다.
 
 ### 4.5 How much augmentation?
 
