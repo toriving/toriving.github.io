@@ -1,7 +1,7 @@
 ---
 title: "MixText: Linguistically-Informed Interpolation of Hidden Space for Semi-Supervised Text Classification"
 layout: post
-date: 2020-08-22 01:19
+date: 2020-08-22 00:19
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -17,7 +17,7 @@ toc: true
 ---
 
 
-**Authors** : Jiaao Chen, Zichao Yang, Diyi Yang
+**Authors** : Jiaao Chen, Zichao Yang, Diyi Yang   
 Georgia Tech / CMU  
 **ACL 2020**  
 Paper : [https://arxiv.org/pdf/2004.12239.pdf](https://arxiv.org/pdf/2004.12239.pdf)  
@@ -58,7 +58,7 @@ This paper presents MixText, a semi-supervised learning method for text classifi
     - Large scale pretraining with unlabeld data, then finetuning with labeled data (BERT)
 - 이러한 다양한 연구들이 잘 되었음에도 불구하고, labeled data와 unlabeled data가 서로 supervision 하는 방식은 사용되지 않고 따로 사용함
 - 그러므로 대부분의 semi-supervised learning의 경우 labeled data가 제한적인 상황에서 unlabeled data가 충분하여도 overfitting이 발생함
-- 이러한 문제점을 해결하기 위해 new data augmentation method인 TMix를 제안 (Mixup에서 영감을 받음) Figure 1.
+- 이러한 문제점을 해결하기 위해 new data augmentation method인 TMix를 제안 (Mixup에서 영감을 받음) Figure 1.은 TMix의 전체적인 모습
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled.png" width="75%" height="75%"> </p>
 
@@ -76,7 +76,7 @@ This paper presents MixText, a semi-supervised learning method for text classifi
 
 ### 2.1. Pre-training and Fine-tuning Framework
 
-- GPT, BERT 와 같은 PLM 모델에 대해 소개
+: GPT, BERT 와 같은 PLM 모델에 대해 소개
 
 ### 2.2. Semi-Supervised Learning on Text Data
 
@@ -95,8 +95,8 @@ This paper presents MixText, a semi-supervised learning method for text classifi
 - Mixup을 Text domain에서 사용 하는 방법 제안
 - Mixup
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%201.png" width="75%" height="75%"> </p>
-
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%201.png" width="100%" height="100%"> </p>
+Reference : [https://hoya012.github.io/blog/Bag-of-Tricks-for-Image-Classification-with-Convolutional-Neural-Networks-Review/](https://hoya012.github.io/blog/Bag-of-Tricks-for-Image-Classification-with-Convolutional-Neural-Networks-Review/)
 
 - 이러한 방법은 Discrete token을 가지는 Text에서 그대로 적용을 하지 못함
 - 따라서 "interpolation in textual hidden space" 을 함
@@ -106,18 +106,18 @@ This paper presents MixText, a semi-supervised learning method for text classifi
 
 - 위의 Figure를 아래와 같은 식으로 정리 할 수 있음
 
-    <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%203.png" width="75%" height="75%"> </p>
+    <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%203.png" width="40%" height="40%"> </p>
 
-- Interpolation 비율인 $\lambda$ 는 기존 MixUp 방식과 동일하게 설정하며, 여기서 $\alpha$는 hyper-parameter
+- Interpolation 비율인 $$\lambda$$ 는 기존 MixUp 방식과 동일하게 설정하며, 여기서 $$\alpha$$는 hyper-parameter
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%204.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%204.png" width="25%" height="25%"> </p>
 
 - 또한 여기서는 12-layer BERT-base 를 바탕으로 실험을 하였는데, 어느 layer에서 mixup을 할 것인지도 의사결정을 해야함
 - “What does BERT learn about the structure of language” 논문에서 BERT는 각 layer마다 학습하는 것이 다르다고 함
 - Syntactic and semantic information을 잘 포함하는 {7, 9, 12} layers set에서 랜덤으로 선택하여 사용
 - Downstream task (text classification)에서의 Supervision loss는 다음과 같음
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%205.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%205.png" width="50%" height="50%"> </p>
 
 ## 4. Semi-supervised MixText
 
@@ -131,11 +131,11 @@ Labeled data와 Unlabeled data를 모두 사용하여 classifier를 학습하도
 
 전체 Flow는 다음과 같음
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%206.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%206.png" width="100%" height="100%"> </p>
 
 ### 4.1. Data Augmentation
 
-- Back-translation 을 이용하여 Unlabeled data에 대해 서로 다른 intermediate language로 $K$개를 생성
+- Back-translation 을 이용하여 Unlabeled data에 대해 서로 다른 intermediate language로 $$K$$개를 생성
 - Back-translation 을 할 때 beam search 대신 temperature scaling을 하면서 random sampling을 하였음
 
 ### 4.1. Label Guessing
@@ -143,23 +143,23 @@ Labeled data와 Unlabeled data를 모두 사용하여 classifier를 학습하도
 - Unlabeled data 와 Augmented data 에 Virtual label을 붙여주기 위해 Label Guessing 이라는 방법을 사용한다
 - Original data와 augmented data에 대해서 predicted result를 weighted average
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%207.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%207.png" width="50%" height="50%"> </p>
 
 - 그 후 Weighted average 한 값이 uniform 해지는 것을 방지하기 위해서 sharpening 을 함
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%208.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%208.png" width="25%" height="25%"> </p>
 
 ### 4.3. TMix on Labeled and Unlabeled Data
 
 - 앞에서 만들어진 Unlabeled data with guessed label , Augmented data with guessed label 을 통해 TMix를 다음과 같은 방법으로 진행한다.
-- Labeled data, unlabeled data, unlabeled augmentation data 를 모두 더해 super set $X$를 만들고 마찬가지로 label 도 더해서 super set $Y$를 생성
+- Labeled data, unlabeled data, unlabeled augmentation data 를 모두 더해 super set $$X$$를 만들고 마찬가지로 label 도 더해서 super set $$Y$$를 생성
 - 학습 과정에서 X, Y 에서 랜덤으로 두 데이터를 샘플링하여 TMix Loss를 얻을 수 있음
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%209.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%209.png" width="50%" height="50%"> </p>
 
 - 이러한 TMix Loss는 두가지 방법으로 얻어질 수 있는데
-    1. $\bold{x}$ 가 Labeled data로 샘플링 되었을 때 Labeled data에 대해 Supervised loss
-    2. $\bold{x}$ 가 augmented data or unlabeled data로 샘플링 되었을 때 Augmented data와 Unlabeled data에 대해 Consistency loss
+    1. $$x$$ 가 Labeled data로 샘플링 되었을 때 Labeled data에 대해 Supervised loss
+    2. $$x$$ 가 augmented data or unlabeled data로 샘플링 되었을 때 Augmented data와 Unlabeled data에 대해 Consistency loss
 
 - 실제 코드 상으로는 랜덤 조합으로 학습하기 때문에 배치 내에서 분할하여 각 loss를 구해서 합한다
 
@@ -167,13 +167,13 @@ Labeled data와 Unlabeled data를 모두 사용하여 classifier를 학습하도
 
 - Unlabeled data에 대하여 model이 label guessing을 잘하도록 prediction probability on unlabeled data 의 entropy를 minimize 하도록 self-training loss를 추가함
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2010.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2010.png" width="50%" height="50%"> </p>
 
 - 해당 Loss도 실제 코드상에서는 사용이 안되는 것 같음
 
 - 최종적으로 MixText Loss는 다음과 같음
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2011.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2011.png" width="50%" height="50%"> </p>
 
 ## 5. Experiments
 
@@ -181,7 +181,7 @@ Labeled data와 Unlabeled data를 모두 사용하여 classifier를 학습하도
 
 - Dataset : AG News, DBPedia, Yahoo! Answer, IMDB
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2012.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2012.png" width="100%" height="100%"> </p>
 
 ### 5.2. Baselines
 
@@ -197,7 +197,7 @@ Labeled data와 Unlabeled data를 모두 사용하여 classifier를 학습하도
 
 - Varying the Number of Labeled Data
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2013.png" width="75%" height="75%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2013.png" width="100%" height="100%"> </p>
 
 - Varying the Number of Unlabeled Data
 
