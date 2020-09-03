@@ -195,6 +195,10 @@ Labeled data와 Unlabeled data를 모두 사용하여 classifier를 학습하도
 
 ### 5.4. Results
 
+- Performance comparison with baselines
+
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2018.png" width="100%" height="100%"> </p>
+
 - Varying the Number of Labeled Data
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2013.png" width="100%" height="100%"> </p>
