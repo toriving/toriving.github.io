@@ -196,7 +196,7 @@ Labeled data와 Unlabeled data를 모두 사용하여 classifier를 학습하도
 ### 5.4. Results
 
 - Performance comparison with baselines
-
+    - MixText가 가장 좋다고 한다... 무려 모든 데이터셋에 대해서.
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2018.png" width="100%" height="100%"> </p>
 
 - Varying the Number of Labeled Data
@@ -204,22 +204,25 @@ Labeled data와 Unlabeled data를 모두 사용하여 classifier를 학습하도
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2013.png" width="100%" height="100%"> </p>
 
 - Varying the Number of Unlabeled Data
-
+    - unlabeled data를 늘리면 성능도 향상
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2014.png" width="75%" height="75%"> </p>
 
 - Loss on Development Set
-
+    - 비교적 다른 방법들 보다 Development Set 에서의 overfitting이 적다고 주장
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2015.png" width="75%" height="75%"> </p>
 
 ### 5.5. Ablation Studies
 
 - Different Mix Layer Set in TMix
-
+    - 실험 결과 syntactic과 semantic 정보를 많이 포함하는 쪽에서 성능이 잘나옴
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2016.png" width="75%" height="75%"> </p>
 
 - Remove Different Parts from MixText
-
+    - 당연하게 unlabeled data 가 가장 영향력이 크다.
+    - weighted average 는 생각보다 영향력이 적음.
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/MixText%20Linguistically-Informed%20Interpolation%20of%20H%20d98463139cbc4528a231331a91f162c6\Untitled%2017.png" width="75%" height="75%"> </p>
+
+
 
 ## 6. Conclusion
 
