@@ -206,6 +206,7 @@ across different NLP tasks. **In this paper, we study different types of pre-tra
 
 - BART 기반이 가장 좋음
 - GPT2는 context를 주면 좋음
+- **재현이 잘 되지 않음**
 
 **Generated Data Fidelity**
 
