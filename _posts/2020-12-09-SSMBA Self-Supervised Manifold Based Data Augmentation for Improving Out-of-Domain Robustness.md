@@ -37,7 +37,7 @@ Code : [https://github.com/nng555/ssmba](https://github.com/nng555/ssmba)
 **개인적 견해**
 
 - CBERT 이후에 나온 GPT2 / BART를 이용한 모델과 비교하지 않은 점이 아쉬움
-- CBERT와 거의 비슷하지만 모델이 RoBRETa 로 바뀐 점, 그리고 레이블링을 하지 않는 점, 그리고 *fine-tuning을 하지 않는 점이 다름*
+- CBERT와 거의 비슷하지만 모델이 RoBRETa 로 바뀐 점, 그리고 레이블링을 하지 않는 점, 그리고 **fine-tuning을 하지 않는 점이 다름**
 - CBERT에서는 가정이나 가설같은게 존재하지 않았는데, 이 논문에서는 그럴싸한 가설을 가져오고 가정을 함
 - 다양한 분석이 Accept 요인이지 않을까?
 - 튜닝 할 것이 많은 것 같다.
@@ -96,20 +96,20 @@ examples by using a pair of corruption and re-
 - Computer Vision 분야에서는 scaling을 하거나 color를 변경하거나 translation, roation을 하는 방식.
 
 - Manifold assumption은 고차원 데이터가 저차원 manifold에 놓여 있다는 것을 말함.
-- *이 가정을 통해 trainining example의 주변부를 data manifold에 있는 주변부분인 manifold neighborhood로 정의할 수 있다*
-    - *This assumption allows us to define the vicinity of a training example as its manifold neighborhood, the portion of the neighborhood that lies on the data manifold.*
+- **이 가정을 통해 trainining example의 주변부를 data manifold에 있는 주변부분인 manifold neighborhood로 정의할 수 있다**
+    - **This assumption allows us to define the vicinity of a training example as its manifold neighborhood, the portion of the neighborhood that lies on the data manifold.**
 - 최근 Manifold assumption을 바탕으로 decision boundary를 확장하거나, adversarial example을 생성하거나, 두개의 example을 interpolation하는 방식 또는 affine transformation을 하여 robustness를 증가시켰다.
 
 ### 2. 3. Sampling from Denoising Autoencoders
 
-- Denoising AutoEncoder (DAE)는 conditional distribution $$P_{\theta}(x|x')$$ 을 통해  stochastically corrupted $$x'\sim q(x'|x)$$ 된 clean input $$x$$를 reconstruction 하도록 학습한다.
+- Denoising AutoEncoder (DAE)는 conditional distribution $$P_\theta(x|x')$$ 을 통해 stochastically corrupted $$x'\sim q(x'|x)$$ 된 clean input $$x$$를 reconstruction 하도록 학습한다.
 - Pseudo-Gibbs Markov chain 을 이용
 - Training dataset이 증가하면 실제 데이터 생성 분포 P(x)에 근접하게 된다.
 - 이러한 process는 P(x)가 분포되어 있는 매니폴드를 따라 샘플링을 할 수 있도록 함.
 
 ### 2. 4. Masked Language Models
 
-- BERT 및 다른 여러모델에서 쓰인 것 처럼 일정 퍼센트의 토큰을 랜덤하게 corruption (masking하고 원래 토큰을 reconstruction 하도록 학습하는 것 (MLM task)
+- BERT 및 다른 여러모델에서 쓰인 것 처럼 일정 퍼센트의 토큰을 랜덤하게 corruption (masking)하고 원래 토큰을 reconstruction 하도록 학습하는 것 (MLM task)
 - 여기서는 MLM을 이용하여 DAEs를 할것이다.
 - Figure 2
 
@@ -239,7 +239,7 @@ MT tasks
 아래의 특성 및 설정으로 Baby domain within the AR-Clothing dataset에 대한 분석
 
 - 상대적으로 적은 데이터 (25k)
-- # of OOD domains (3)
+- Number of OOD domains (3)
 - Amount of domain shift
 - CNN 모델 사용
 - 45% Corruption
