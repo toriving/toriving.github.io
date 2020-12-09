@@ -102,7 +102,7 @@ examples by using a pair of corruption and re-
 
 ### 2. 3. Sampling from Denoising Autoencoders
 
-- Denoising AutoEncoder (DAE)는 conditional distribution $$P_\theta(x|x')$$ 을 통해 stochastically corrupted $$x'\sim q(x'|x)$$ 된 clean input $$x$$를 reconstruction 하도록 학습한다.
+- Denoising AutoEncoder (DAE)는 conditional distribution $$P_\theta(x|x')$$ 을 통해 stochastically corrupted
 - Pseudo-Gibbs Markov chain 을 이용
 - Training dataset이 증가하면 실제 데이터 생성 분포 P(x)에 근접하게 된다.
 - 이러한 process는 P(x)가 분포되어 있는 매니폴드를 따라 샘플링을 할 수 있도록 함.
