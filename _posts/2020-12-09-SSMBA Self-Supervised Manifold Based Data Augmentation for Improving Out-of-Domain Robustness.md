@@ -47,7 +47,7 @@ Code : [https://github.com/nng555/ssmba](https://github.com/nng555/ssmba)
 
 ## Abstract
 
-Models that perform well on a training domain often fail to generalize to out-of-domain (OOD) examples. Data augmentation is a common method used to prevent overfitting and improve OOD generalization. *However, in natural language, it is difficult to generate new examples that stay on the underlying data manifold.* We introduce **SSMBA**, a data augmentation method for generating synthetic training examples by *using a pair of corruption and reconstruction functions to move randomly on a data manifold.* We investigate the use of SSMBA in the natural language domain, leveraging the manifold assumption to reconstruct corrupted text with masked language models. In experiments on robustness benchmarks across 3 tasks and 9 datasets, SSMBA consistently outperforms existing data augmentation methods and baseline models on both in-domain and OOD data, achieving gains of 0.8% accuracy on OOD Amazon reviews, 1.8% accuracy on OOD MNLI, and 1.4 BLEU on in-domain IWSLT14 German-English.
+Models that perform well on a training domain often fail to generalize to out-of-domain (OOD) examples. Data augmentation is a common method used to prevent overfitting and improve OOD generalization. **However, in natural language, it is difficult to generate new examples that stay on the underlying data manifold.** We introduce **SSMBA**, a data augmentation method for generating synthetic training examples by **using a pair of corruption and reconstruction functions to move randomly on a data manifold.** We investigate the use of SSMBA in the natural language domain, leveraging the manifold assumption to reconstruct corrupted text with masked language models. In experiments on robustness benchmarks across 3 tasks and 9 datasets, SSMBA consistently outperforms existing data augmentation methods and baseline models on both in-domain and OOD data, achieving gains of 0.8% accuracy on OOD Amazon reviews, 1.8% accuracy on OOD MNLI, and 1.4 BLEU on in-domain IWSLT14 German-English.
 
 examples by using a pair of corruption and re-
 
@@ -58,20 +58,20 @@ examples by using a pair of corruption and re-
 - 따라서 unseen examples에 대해 강건하도록 학습시키는 것이 machine learning model 학습의 키포인트이다.
 - 일반적으로 전체 분포로 일반화하는 것은 불가능 하므로 Out-Of-Domain (OOD) robustness 에 목표를 맞춘다.
 - Data Augmentation (DA)는 OOD robustness를 향상시키는 일반적인 방법이다.
-- *만약 데이터가 low-dimensional manifold에 집중되어 있다면, 그 데이터에 의해 DA된 데이터는 원래 데이터의 주변에 있어야 한다.*
+- **만약 데이터가 low-dimensional manifold에 집중되어 있다면, 그 데이터에 의해 DA된 데이터는 원래 데이터의 주변에 있어야 한다.**
 - 이러한 perturbation 방법론들 (DA) 는 semi-supervised and self-supervised settings에서 성능 향상 또는 일반화가 되는걸 보여주었다.
 - 이미지 데이터는 회전이나 간단한 transformation을 통해 DA가 가능하지만, NLP는 의미를 보존하면서 DA 하기가 힘들다.
 - 본 논문에서는 Self-Supervised Manifold Based Data Augmentation (SSMBA)를 제안한다.
 - SSMBA는 휴리스틱하게 특성화하기 어려운 도메인에서 DA를 하는 방법이다.
     - 휴리스틱한 방법론으로 NLP는 DA하기 어렵다는 뜻
 - Denoising auto-encoder을 모티브로함
-    - Corruption function을 통해 data manifold에서 확률적으로 examples을 *off* (perurb) 한다.
-    - 그 다음 Reconstruction function을 통해 *back on* (project) 한다
+    - Corruption function을 통해 data manifold에서 확률적으로 examples을 **off** (perurb) 한다.
+    - 그 다음 Reconstruction function을 통해 **back on** (project) 한다
 
-        <p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled.png" width="50%" height="50%"> </p>
+        <p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled.png" width="75%" height="75%"> </p>
 
     - 이런 방식으로 하면 DA 된 데이터가 원래 데이터의 주변에 놓이게 된다.
-- SSMBA는 모든 supervised task에 적용할 수 있으며, task-specific한 knowledge가 필요하지 않고, *class- 또는 dataset-specific fine-tuning이 필요하지 않다.*
+- SSMBA는 모든 supervised task에 적용할 수 있으며, task-specific한 knowledge가 필요하지 않고, **class- 또는 dataset-specific fine-tuning이 필요하지 않다.**
 - 감정 분석, 자연어 추론 및 기계 번역에서 SSMBA를 사용하는 방법을 조사함
 - 9개의 데이터 세트와 4개의 모델에 대한 실험에서 SSMBA가 In-domain 및 OOD 데이터 모두에서 baseline과 다른 방법론보다 좋음
 
@@ -102,7 +102,7 @@ examples by using a pair of corruption and re-
 
 ### 2. 3. Sampling from Denoising Autoencoders
 
-- Denoising AutoEncoder (DAE)는 conditional distribution $P_{\theta}(x|x')$ 을 통해  stochastically corrupted $x'\sim q(x'|x)$ 된 clean input $x$를 reconstruction 하도록 학습한다.
+- Denoising AutoEncoder (DAE)는 conditional distribution $$P_{\theta}(x|x')$$ 을 통해  stochastically corrupted $$x'\sim q(x'|x)$$ 된 clean input $$x$$를 reconstruction 하도록 학습한다.
 - Pseudo-Gibbs Markov chain 을 이용
 - Training dataset이 증가하면 실제 데이터 생성 분포 P(x)에 근접하게 된다.
 - 이러한 process는 P(x)가 분포되어 있는 매니폴드를 따라 샘플링을 할 수 있도록 함.
@@ -113,20 +113,20 @@ examples by using a pair of corruption and re-
 - 여기서는 MLM을 이용하여 DAEs를 할것이다.
 - Figure 2
 
-    <p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%201.png" width="50%" height="50%"> </p>
+    <p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%201.png" width="75%" height="75%"> </p>
 
 ## 3. SSMBA: Self-Supervised Manifold Based Augmentation
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%202.png" width="50%" height="50%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%202.png" width="75%" height="75%"> </p>
 
-- 먼저, 입력 데이터들이 저 차원 데이터 매니폴드 $M$에 놓여있다고 가정함
-- $q$ 는 corruption function, $x'\sim q(x'|x)$ such that $x'$ no longer lies on $M$.
-- $r$ 은 reconstruction function, $\hat{x} \sim  r(\hat{x}|x')$ such that $\hat{x}$ lies on $M$.
-- $(x_i, y_i) \in D ,\\ x_i'\sim q(x'|x_i), \\ \hat{x_{ij}} \sim  r(\hat{x}|x_i')$ 방식으로 DA를 한다.
-- 각 input data에 의해 생성된 데이터의  label ($\hat{y}_{ij}$) 는 기존 input data의 label 인 $y_i$를 보존하거나 original data로 훈련된 teacher model을 통해 soft 및 hard 레이블을 사용할 수 있다.
-- SSMBA를 NLP에 적용을 할 것이며, $q$ 로는 MLM을, $r$ 로는 pre-trained BERT 모델을 사용한다.
+- 먼저, 입력 데이터들이 저 차원 데이터 매니폴드 $$M$$에 놓여있다고 가정함
+- $$q$$ 는 corruption function, $$x'\sim q(x'|x)$$ such that $$x'$$ no longer lies on $$M$$.
+- $$r$$ 은 reconstruction function, $$\hat{x} \sim  r(\hat{x}|x')$$ such that $$\hat{x}$$ lies on $$M$$.
+- $$(x_i, y_i) \in D ,\\ x_i'\sim q(x'|x_i), \\ \hat{x_{ij}} \sim  r(\hat{x}|x_i')$$ 방식으로 DA를 한다.
+- 각 input data에 의해 생성된 데이터의  label ($$\hat{y}_{ij}$$) 는 기존 input data의 label 인 $$y_i$$를 보존하거나 original data로 훈련된 teacher model을 통해 soft 및 hard 레이블을 사용할 수 있다.
+- SSMBA를 NLP에 적용을 할 것이며, $$q$$ 로는 MLM을, $$r$$ 로는 pre-trained BERT 모델을 사용한다.
 - 다른 DA 방식과는 다르게 fine-tuning이 필요하지 않으며, supervised learning에 대부분 적용할 수 있다.
-- $q, r, dataset$ 만이 필요하다.
+- $$q, r, dataset$$ 만이 필요하다.
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%203.png" width="50%" height="50%"> </p>
 
@@ -141,7 +141,7 @@ examples by using a pair of corruption and re-
     
     - 데이터셋 상세 정보
 
-        <p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%205.png" width="50%" height="50%"> </p>
+        <p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%205.png" width="100%" height="100%"> </p>
         
 ### 4.1. Sentiment Analysis
 
@@ -174,15 +174,15 @@ examples by using a pair of corruption and re-
 
 ### 5. 2. SSMBA Settings
 
-- $q$ : MLM corruption function
+- $$q$$ : MLM corruption function
 - Corruption percentage 는 튜닝
-- Sentiment analysis and NLI에서 $r$ 은 RoBERTa_base 사용
+- Sentiment analysis and NLI에서 $$r$$ 은 RoBERTa_base 사용
 - MT 에서는 pre-trained German BERT model 사용
 - 각 인풋 데이터마다 5개의 샘플을 unrestricted sampling 함
 - MT 에서는 빔사이즈 5
 - Table 8
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%206.png" width="50%" height="50%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%206.png" width="100%" height="100%"> </p>
 
 ### 5. 3. Baselines
 
@@ -209,7 +209,7 @@ MT tasks
 
 ### 6. 1. Sentiment Analysis
 
-<p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%207.png" width="50%" height="50%"> </p>
+<p align="center"><img src="{{site.url}}/{{site.post-assets}}/SSMBA Self-Supervised Manifold Based Data Augmenta 5c514340a5504ac286e24639e1e90a4b/Untitled%207.png" width="100%" height="100%"> </p>
 
 - OOD 데이터에서 SSMBA가 baseline과 다른 augmentation method 보다 좋다.
 - In-domain (ID) 데이터에서는 CNN에서는 마찬가지로 좋았고 RNN에서는 Movies 를 제외하고 가장 좋았다.
@@ -306,5 +306,3 @@ MT tasks
 ## 8. Conclusion
 
 > In this paper, we introduce SSMBA, a method for generating synthetic data in settings where the underlying data manifold is difficult to char- acterize. In contrast to other data augmentation methods, SSMBA is applicable to any supervised task, requires no task-specific knowledge, and does not rely on dataset-specific fine-tuning. We demonstrate SSMBA’s effectiveness on three NLP tasks spanning classification and sequence mod- eling: sentiment analysis, natural language infer- ence, and machine translation. We achieve gains of 0.8% accuracy on OOD Amazon reviews, 1.8% accuracy on OOD MNLI, and 1.4 BLEU on in- domain IWSLT14 de!en. Our analysis shows that SSMBA is robust to the initial dataset size, recon- struction model choice, and corruption amount, offering OOD robustness improvements in most set- tings. Future work will explore applying SSMBA to the target side manifold in structured prediction tasks, as well as other natural language tasks and settings where data augmentation is difficult.
-
----
