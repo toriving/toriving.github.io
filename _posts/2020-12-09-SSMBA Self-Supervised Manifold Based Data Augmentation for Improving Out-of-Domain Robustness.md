@@ -122,7 +122,7 @@ examples by using a pair of corruption and re-
 - 먼저, 입력 데이터들이 저 차원 데이터 매니폴드 $$M$$에 놓여있다고 가정함
 - $$q$$ 는 corruption function, $$x'\sim q(x'\vert x)$$ such that $$x'$$ no longer lies on $$M$$.
 - $$r$$ 은 reconstruction function, $$\hat{x} \sim  r(\hat{x}\vert x')$$ such that $$\hat{x}$$ lies on $$M$$.
-- $$(x_i, y_i) \in D ,\\ x_i'\sim q(x'\vert x_i), \\ \hat{x_{ij}} \sim  r(\hat{x}\vert x_i')$$ 방식으로 DA를 한다.
+- $$(x_i, y_i) \in D ,\\ x_i'\sim q(x'\vert x_i), \\ \hat{x}_{ij} \sim  r(\hat{x}\vert x_i')$$ 방식으로 DA를 한다.
 - 각 input data에 의해 생성된 데이터의  label ($$\hat{y}_{ij}$$) 는 기존 input data의 label 인 $$y_i$$를 보존하거나 original data로 훈련된 teacher model을 통해 soft 및 hard 레이블을 사용할 수 있다.
 - SSMBA를 NLP에 적용을 할 것이며, $$q$$ 로는 MLM을, $$r$$ 로는 pre-trained BERT 모델을 사용한다.
 - 다른 DA 방식과는 다르게 fine-tuning이 필요하지 않으며, supervised learning에 대부분 적용할 수 있다.
