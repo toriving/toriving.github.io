@@ -65,7 +65,7 @@ Unsupervised pre-training has led to much recent progress in natural language un
 - Pre-training (semi-supervised method) 과 self-training은 같은 정보를 얻는지 아니면 상호 보완적인지에 대한 물음을 던질 수 있다.
 - 최근 연구에서는 pre-training 이외에도 self-training이 성능 향상에 도움을 준다는 것을 보인다.
 - 하지만 NLP와 달리 ImageNet을 Pre-trained model로 사용할 경우 downstram task에 많은 데이터가 존재한다면, pre-training이 도움이 되지 않는다.
-- 또한 Rethinking Pre-training and Self-training 페이퍼에서는 self-training이 pre-training 보다 더 좋은 성능을 보이기도 한다.
+- (Rethinking Pre-training and Self-training, 2020)
 - 두 방법은 모두 downstream domain과 동일한 도메인에서 unlabeled data가 있다고 가정을 한다.
 - 이러한 assumption은 low-resource downstram task의 경우 제한적이다.
 - 따라서 두번째 물음을 던질 수 있는건, '특정 도메인에서 unlabeled data를 어떻게 대량으로 얻을 수 있는가' 이다.
