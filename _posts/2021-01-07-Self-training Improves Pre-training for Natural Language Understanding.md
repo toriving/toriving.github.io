@@ -175,7 +175,7 @@ Data augmentation technique을 self-training과 KD를 결합하여 사용하여 
     - Multilingual masked language model을 pretraing 해서 사용 (영어, 프랑스어, 이탈리아어, 인도네시아어)
     - Triplet loss를 이용하여 학습
     - 이렇게 학습 된 모델은 Semantic Textual Similarity (STS) 벤치마크에 대해 평가함
-    - Pretraining과 긴 문장에 대한 학습이 CommonCreawl의 문장에 대해 적합하다는 것을 발견
+    - Pretraining과 긴 문장에 대한 학습이 CommonCrawl의 문장에 대해 적합하다는 것을 발견
     - Word2Vec 및 uSIF와 비교함
     
 <br>
