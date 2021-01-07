@@ -69,7 +69,7 @@ Unsupervised pre-training has led to much recent progress in natural language un
     - 풀고자 하는 문제를 위한 많은 labeled data가 있고, 강한 data augmentation을 이용하면 pre-training의 성능이 떨어진다.
     - Pre-training과 달리 Self-training은 강한 data augmentation을 사용하는게 유용하다.
     - Pre-training이 성능을 향상시키는 경우라면, Self-training은 그 이상의 성능향상을 가져온다.
-    - <p style="color:red;">[Reference](https://creamnuts.github.io/short%20review/Rethinking_self_training/)</p>
+    - [REFERENCE](https://creamnuts.github.io/short%20review/Rethinking_self_training/)
 - 두 방법은 모두 downstream domain과 동일한 도메인에서 unlabeled data가 있다고 가정을 한다.
 - 이러한 assumption은 low-resource downstram task의 경우 제한적이다.
 - 따라서 두번째 물음을 던질 수 있는건, '특정 도메인에서 unlabeled data를 어떻게 대량으로 얻을 수 있는가' 이다.
