@@ -192,7 +192,7 @@ Data augmentation technique을 self-training과 KD를 결합하여 사용하여 
 
 - **Few-shot learning experiments**
     - 각 레이블 별로 20개의 데이터를 가지는 5개의 training set을 구성
-    - label distribution을 고려하여 valiudation set에서 200개의 example을 샘플링하여 validation set 구성
+    - label distribution을 고려하여 validation set에서 200개의 example을 샘플링하여 validation set 구성
     - test set은 그대로 사용
     - 10개 seed로 실험하였고, 상위 3개모델의 평균 테스트 정확도를 측정
     - 이를 기반으로 5개의 training set 훈련 셋에 대해 테스트함
