@@ -195,7 +195,7 @@ Data augmentation technique을 self-training과 KD를 결합하여 사용하여 
     - label distribution을 고려하여 validation set에서 200개의 example을 샘플링하여 validation set 구성
     - test set은 그대로 사용
     - 10개 seed로 실험하였고, 상위 3개모델의 평균 테스트 정확도를 측정
-    - 이를 기반으로 5개의 training set 훈련 셋에 대해 테스트함
+    - 이를 기반으로 5개의 training set 에 대해 테스트함
     - 이 실험에서는 full-shot setting과는 달리 discrete label 사용, 학습 셋에 ground truth data를 사용, augmentation data 상위 1000개에서 기존의 데이터 크기 (레이블 별 20개) 만큼 샘플링해서 증가시킴
     - Teacher model이 성능이 좋지 않을 것이므로 student model에 사용되는 전체 데이터 셋이 noisy 한 데이터가 full-shot setting에 비해 더 많아 질 수 있으므로 해당 방식 채택
 
