@@ -83,7 +83,7 @@ Pretrained Transformer-based language models (LMs) display remarkable natural la
 
     $$p(x_t,...,x_l|x_1,...,x_{t-1}) = \prod_{i=t}^lp(x_i|x_1,...,x_{i-1}).$$
 
-    - $p(x)$ can be conditioned on target attributes or control code ($\alpha$) (PPLM, CTRL)
+    - $$p(x)$$ can be conditioned on target attributes or control code ($$\alpha$$) (PPLM, CTRL)
 
     $$p(x_t,...,x_l|x_1,...,x_{t-1}) = \prod_{i=t}^lp(x_i|\alpha, \{x_1,...,x_{i-1}\}).$$
 
