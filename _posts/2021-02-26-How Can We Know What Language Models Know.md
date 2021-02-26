@@ -150,6 +150,9 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 **Dataset**
 
 - T-REx subset of the LAMA benchmark
+    - LM 고유의 "factual and commonsense knowledge" 를 측정
+    - Knowledge base triple (S, R, O) 이 주어졌을때 Cloze-style query로 부터 object가 도출됨
+    - e.g., (Jean Marais, native-language, French) → "The native language of Jean Marais is [MASK]."
 - Trainset (T-REx-train) : 프롬프트를 구성하기 위해 Wikidata 에서 T-REx와 겹치지 않도록 제작
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Can We Know What Language Models Know/Untitled%205.png" width="50%" height="50%"> </p>
