@@ -86,7 +86,6 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 - 좋은 프롬프트는 LM이 가능한 자주 ground-truth objects를 예측하도록 만드는 프롬프트임.
 
 ## 3. Prompt Generation
-
 ### 3. 1. Mining-based Generation
 
 - subject *x* 와 object *y* 의 주변 단어들이 종종 relation *r* 을 설명한다는 관찰 바탕인 템플릿 기반 관계 추출 방법에서 영감을 얻음.
@@ -121,7 +120,6 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
     - Round-trip probability : $$P_{\text{forward}}(\bar{t}\vert \hat{t})\cdot P_{\text{backward}}(t\vert \bar{t})$$, where $$\hat{t}$$ is the initial prompt, $$\bar{t}$$ is the translated prompt in the other language, and $$t$$ is the final prompt.
 
 ## 4. Prompt Selection and Ensembling
-
 ### 4. 1. Top-1 Prompt Selection
 
 - 각 프롬프트에 대해 다음을 사용하여 학습데이터에 대해 ground-truth objects에 대한 정확도를 구할 수 있음.
@@ -147,7 +145,6 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 - The parameter $$\theta_{r}$$ is optimized to maximize the probability of the gold-standard objects $$P(y\vert x,r)$$ over training data.
 
 ## 5. Main Experiments
-
 ### 5. 1. Experimental Settings
 
 **Dataset**
@@ -158,14 +155,12 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Can We Know What Language Models Know/Untitled%205.png" width="50%" height="50%"> </p>
 
 **Models**
-
 - BERT-base
 - BERT-large
 - ERNIE
 - Know-Bert
 
 **Evaluation Metrics**
-
 - micro-averaged accuracy : calculating the accuracy of all subject-object paris for relation r:
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Can We Know What Language Models Know/Untitled%206.png" width="33%" height="33%"> </p>
@@ -177,21 +172,21 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 
 - where uni_obj(R) returns a set of unique objects from realtion r.
 
-**Method**
 
+**Method**
 - Majority : 각 relation에서의 가장 일반적인 object를 선택할 경우
 - Man : manually designed prompts
 - Mine : Mining-based Generation with wikipeida
 - Mine + Man : Mining-base + manual
 - Mine + Para : Mining-base + Paraphrasing-base
-- Man + Para : Manual + Praphrasing-base
+- Man + Para : Manual + Paraphrasing-base
 
 - TopK : highest-ranked prompt
 - Opti : the weights after optimization
 - Oracle : Upper bound (생성된 프롬프트 중 어느 하나라도 맞춘 경우)
 
-**Implementation Details**
 
+**Implementation Details**
 - T = 40 most frequent prompts either generated through mining or paraphrasing
 - number of candidates in back-translation is set to B = 7
 - Remove prompt only containing stop-words/punctuation or longer than 10 words
@@ -211,6 +206,7 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 
 - Manual prompts가 구문적으로 더 복잡하거나 Mined prompts 보다 덜 일반적인 구문을 사용하는 경우 Gain이 크다
 
+
 **Prompt Ensembling**
 
 - 대체적으로 Top1 보단 Top3, Top5가 더 좋으며, Opti의 경우가 제일 좋음
@@ -226,6 +222,7 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 - Para의 경우 top-5 가 최고
 - 많은 프롬프트를 앙상블 한다고 성능이 향상되는 것은 아님
 
+
 **Mining vs. Paraphrasing**
 
 - 순위 기반 앙상블의 경우 패러프레이징으로 생성된 프롬프트가 일반적으로 마이닝 된 프롬프트보다 더 나은 성능을 보여줌
@@ -236,9 +233,11 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 - 한 단어 를 변경하면 정확도가 크게 향상 될 수 있음
 - 이는 large-scale LM이 작은 변화에 여전히 취약함을 보임
 
+
 **Middle-word vs. Dependency-based**
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Can We Know What Language Models Know/Untitled%2014.png" width="50%" height="50%"> </p>
+
 
 **Performance of Different LMs**
 
@@ -247,13 +246,16 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 - ERNIE / KnowBert : 엔티티 임베딩을 명시적으로 통합한 모델
 - ERNIE > BERT > KnowBert
 
+
 **LAMA-UHN Evaluation**
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Can We Know What Language Models Know/Untitled%2016.png" width="50%" height="50%"> </p>
 
+
 **Performance on Google-RE**
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Can We Know What Language Models Know/Untitled%2017.png" width="50%" height="50%"> </p>
+
 
 ### 5. 3. Analysis
 
@@ -266,6 +268,7 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 - Eidit distance가 커지면 divergence가 증가하여 매우 다른 프롬프트가 다른 예측 결과를 유발하는 경향이 있음
 - 피어슨 상관 계수는 0.25로 weak correlation가 있음
 
+
 **POS-based Analysis**
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Can We Know What Language Models Know/Untitled%2020.png" width="50%" height="50%"> </p>
@@ -277,6 +280,7 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
     - “x VBD VBN IN y” (e.g., “x was born in y”)
     - “x VBZ DT NN IN y” (e.g., “x is the capital of y”).
 
+
 **Cross-model Consistency**
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Can We Know What Language Models Know/Untitled%2022.png" width="50%" height="50%"> </p>
@@ -287,6 +291,7 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 - 여기에서도 Mine + Man 이 가장 좋은 성능을 보임
 - BERT-base → BERT-large 보다 BERT-base → ERNIE 가 성능 하락이 더 큼
 - 이는 같은 프롬프트를 사용할때 동일한 아키텍쳐를 사용하는것이 좋음을 보여줌
+
 
 **Linear vs. Log-linear Combination**
 
@@ -301,7 +306,6 @@ y'\in{V}}{\text{argmax}}P_{\text{LM}}(y'\vert x,t_{r})$$
 - We assume that log-linear combination outperforms linear combination because log probabilities make it possible to penalize objects that are very unlikely given any certain prompt.
 
 ## 6. Omitted Design Elements
-
 ### 6. 1. LM-aware Prompt Generation
 
 - 프롬프트에 대해 gorund-truth objects를 생성할 확률을 최대화하는 최적화 문제로 풀어봄
