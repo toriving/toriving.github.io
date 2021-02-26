@@ -73,7 +73,7 @@ Recent work has presented intriguing results examining the knowledge contained i
     - *x* : subject
     - *y* : object
     - *r* : their corrsponding relation
-    - To query the LM, r is associated with a cloze style prompt $$t_{r}$$ consisting of a sequence of tokens, tow of which are placeholders for subjects and objects (e.g., "*x* plays at *y* position").
+    - To query the LM, r is associated with a cloze style prompt $$t_{r}$$ consisting of a sequence of tokens, two of which are placeholders for subjects and objects (e.g., "*x* plays at *y* position").
 - The existence of the fact in the LM is assessed by replacing x with the surface form of the subject, and letting the model predict the missing object
     - (e.g., “*LeBron James* plays at __ position”)
 
