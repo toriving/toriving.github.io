@@ -132,7 +132,7 @@ When fine-tuning pretrained models for classification, researchers either use a 
 - WiC를 제외한 결과에 대해서 head-based 보다 prompt-based가 더 좋음
     - 같은 성능을 얻기위해 prompt-based가 더 적은 수의 데이터를 사용함
 - 데이터 양이 늘어날 수록 두 방법론 모두 성능이 향상되지만 prompt-based가 더 향상이 많음
-- 하이라이트 되어 있으면서 cross-hatch region의 넓이를 horizontal line으로 나누어 데이터 수의 이점을 계산함 (대충 평균값)
+- 하이라이트 되어 있으면서 cross-hatch region의 넓이를 horizontal line의 높이로 나누어 같은 성능에서 프롬프트가 어느정도의 데이터의 개수를 대체할 수 있는지를 간접적으로 계산함 (대충 평균값)  
 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Many Data Points is a Prompt Worth/Untitled%209.png" width="100%" height="100%"> </p>
 
