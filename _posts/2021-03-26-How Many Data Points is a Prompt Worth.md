@@ -146,7 +146,7 @@ When fine-tuning pretrained models for classification, researchers either use a 
 <p align="center"><img src="{{site.url}}/{{site.post-assets}}/How Many Data Points is a Prompt Worth/Untitled%2010.png" width="75%" height="75%"> </p>
 
 - 직관적으로 Prompt는 훈련 데이터가 거의 없어도 natural language로 task description을 도입을 하여 모델에 도움을 줄 수 있음.
-- prompt의 적응적 특성을 이해를 얻기 위해 학습 없이는 의미 정보를 얻을 수 없는 null verbalizer를 도입하여 실험.
+- prompt의 적응적 특성을 이해하기 위해 학습 없이는 의미 정보를 얻을 수 없는 null verbalizer를 도입하여 실험
 - <MASK>에 한 단어를 입력해야하는 모든 task에 대해 "yes", "no", "maybe", "right", "wrong" 과 같은 verbalizer를 임의의 단어로 대체함
 - 그 결과, CB와 같이 데이터가 적을 경우에는 null verbalizer와 full prompt 성능차이가 꽤 존재하지만, 데이터가 많아질수록 모델은 pattern의 inductive bias의 이점을 얻어 verbalizer를 조정하여 성능차이를 완화 시킴
 - 이 결과는 prompt가 훈련의 생성 프로세스와 직접적으로 유사하지 않더라도 데이터 효율성을 제공한다는 것을 보여줌.
